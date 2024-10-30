@@ -54,8 +54,8 @@ https://wc.blockbolt.io/
 
 Demo video:
 
-- # Base Sepolia To AvalancheFuji, https://youtu.be/aOfypdskGbY
-- # Base Sepolia To Arbitrum Sepolia, https://youtu.be/kOa58xvR5Os
+- Base Sepolia To AvalancheFuji, https://youtu.be/aOfypdskGbY
+- Base Sepolia To Arbitrum Sepolia, https://youtu.be/kOa58xvR5Os
 
 ————————————
 
