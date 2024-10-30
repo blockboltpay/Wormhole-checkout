@@ -7,6 +7,7 @@ const ButtonComponent = ({
     variantType,
     sizeName,
     disabled,
+    extraClass,
     ...props
 }: any) => {
     return (
@@ -15,6 +16,7 @@ const ButtonComponent = ({
             variant={variantType}
             disabled={disabled}
             onClick={onClick}
+            className={extraClass}
         >
             {btnText}
         </Button>

@@ -15,6 +15,9 @@ const TextboxComponent = ({
     tooltip,
     onChange,
     borderBottom,
+    placeholder,
+    type,
+    disabled,
     ...rest
 }: any) => {
     const handleChange = (event: any) => {
@@ -33,6 +36,10 @@ const TextboxComponent = ({
             title={title ? title : label}
             autoComplete="off"
             onChange={handleChange}
+            placeholder={placeholder}
+            disabled={disabled}
+            style={style}
+            type={type}
             {...rest}
         />
     )
