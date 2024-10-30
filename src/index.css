@@ -12,6 +12,20 @@ code {
     monospace;
 }
 
-.contentWrapper{
-  min-height: calc(100vh - 280px);
+.containerWrapper {
+  min-height: calc(100vh - 260px);
+}
+
+.containbg{
+  padding: 40px;
+  border-radius: 8px;
+  background: '#f0f4f7';
+}
+
+.overflow-break{
+  overflow-wrap: break-word !important;
+}
+
+.mb-10 {
+  margin-bottom: 10px !important;
 }
