@@ -2,30 +2,22 @@ import React, { useState } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BlockboltLogo } from 'svgIcon';
 import { BlockboltStoreUrl, BlockboltUrl } from 'utils/helper';
+import WSelectionComponent from '../WSelectionComponent';
+import WTransferComponent from '../WTransferComponent';
 import WConnectComponent from '../WConnectComponent';
-import WAmountComponent from '../WAmountComponent';
-import { CustomSigner } from './constant';
+import { CustomSigner, defaultDestinationName, defaultSourceName } from './constant';
 
 const WormholeComponent = () => {
     const [walletAddress, setWalletAddress] = useState<string | null>(null);
     const [transferStatus, setTransferStatus] = useState<string[]>([]);
     const [customSigner, setCustomSigner] = useState<CustomSigner | null>(null);
+    const [sourceChain, setSourceChain] = useState<string>(defaultSourceName);
+    const [destChain, setDestChain] = useState<string>(defaultDestinationName);
 
-    const onRedirectUrl = () => {
-        window.open(BlockboltUrl)
-    }
-
-    const renderConnectComponent = () => (
-        <WConnectComponent
-            setCustomSigner={setCustomSigner}
-            setTransferStatus={setTransferStatus}
-            transferStatus={transferStatus}
-            setWalletAddress={setWalletAddress}
-        />
-    );
-
-    const renderAmountComponent = () => (
-        <WAmountComponent
+    const renderTransferComponent = () => (
+        <WTransferComponent
+            sourceChain={sourceChain}
+            destChain={destChain}
             walletAddress={walletAddress}
             customSigner={customSigner}
             transferStatus={transferStatus}
@@ -33,19 +25,39 @@ const WormholeComponent = () => {
         />
     );
 
+    const renderConnectComponent = () => (
+        <WConnectComponent
+            sourceChain={sourceChain}
+            destChain={destChain}
+            walletAddress={walletAddress}
+            setWalletAddress={setWalletAddress}
+            setTransferStatus={setTransferStatus}
+            setCustomSigner={setCustomSigner}
+            setDestChain={setDestChain}
+        />
+    );
+
     return (
-        <>
-            <div className="text-center mt-5"><BlockboltLogo /></div>
-            <div className='contentWrapper'>
-                <h2 className="text-center text-primary mt-5 mb-4">CROSS CHAIN TRANSFER</h2>
-                <h5 className="text-center text-muted mb-4">Base Sepolia to ArbitrumSepolia</h5>
-                {walletAddress ? renderAmountComponent() : renderConnectComponent()}
+        <div>
+            <div className="text-center mt-5 mb-4"><BlockboltLogo /></div>
+            <div className='containerWrapper'>
+                <div className="container containbg">
+                    <h2 className="text-center text-primary mb-4">CROSS CHAIN TRANSFER</h2>
+                    <h5 className="text-center text-muted mb-4">Select Source and Destination Chains</h5>
+                    <WSelectionComponent
+                        sourceChain={sourceChain}
+                        destChain={destChain}
+                        setDestChain={setDestChain}
+                        setSourceChain={setSourceChain}
+                    />
+                    {walletAddress ? renderTransferComponent() : renderConnectComponent()}
+                </div>
             </div>
             <div>
-                <p className="text-center">Powered by Wormhole & Circle. <br /> We have integrated this flow on BlockBolt Checkout. Please review at <a href={BlockboltStoreUrl} target='_blank'>{BlockboltStoreUrl}</a></p>
-                <p className='text-center'>Developed by BlockBolt <br /> <span className='cursor-pointer' onClick={() => onRedirectUrl()}>www.blockbolt.io</span></p>
+                <h5 className="text-center text-muted">Powered by Wormhole & Circle. <br /> We have integrated this flow on BlockBolt Checkout. Please review at <a href={BlockboltStoreUrl} target='_blank'>{BlockboltStoreUrl}</a></h5>
+                <p className='text-center mt-4'>Developed by BlockBolt <br /><a href={BlockboltUrl} target='_blank'>www.blockbolt.io</a></p>
             </div>
-        </>
+        </div>
     )
 }
 
