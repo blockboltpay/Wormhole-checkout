@@ -57,6 +57,9 @@ Demo video:
 - Base Sepolia To AvalancheFuji, https://youtu.be/aOfypdskGbY
 - Base Sepolia To Arbitrum Sepolia, https://youtu.be/kOa58xvR5Os
 
+Tx ID Sample:
+https://wormholescan.io/#/tx/0xed7bacc7e61341a9f971558ff727bd7bfcb4742bf3072797de784949374c5d76?network=Testnet&view=overview
+
 ————————————
 
 # We have integrated this flow on BlockBolt Checkout. Please review at https://store.blockbolt.io/mocha
