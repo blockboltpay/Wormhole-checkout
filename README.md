@@ -1,46 +1,59 @@
-# Getting Started with Create React App
+# Cross Chain Payment Bridge - Wormhole Checkout
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+We utilize the Circle CCTP on top of the Wormhole SDK to implement cross-chain USDC transfer functionalities within the Blockbolt payment infrastructure.
 
-## Available Scripts
+Func 1: The user (payer) can make payments on the Wormhole-supported chain, and the merchant will receive it on the specified chain at the payment gateway.
 
-In the project directory, you can run:
+Func 2: The merchant wishes to receive the order amount in USDC on the specific chain exclusively.
+
+Func 3: Implement the SDK (Token Transfer) in Flutter DART for Android and iOS applications. We will make it open source.
+
+# Installation guide
+
+Packages are included in the package.json so just run following after setting the project into your local / testing enviroment.
+### `npm install`
+
+Once installed run the app on browser 
+### `npm start`
+
+————————————
+
+If in case CORS or HTTP error in console just generate the sslOptions and set your pem key in server.js in root of the project.
+
+const sslOptions = {
+  key: fs.readFileSync('PATH_TO_PEM.pem'),
+  cert: fs.readFileSync('PATH_TO_CERT.pem'),
+};
+
+node server.js in terminal
+Once the server.js started, default port - 3000 
 
 ### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+It will start on new port e.g 3001 E.G https://localhost:3001
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+————————————
 
-### `npm test`
+Routes directly set to WormholeTransfer component.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# Supported Source Chain
+- Base Sepolia
+- Arbitrum Sepolia
 
-### `npm run build`
+# Supported Destination Chain
+- Base Sepolia
+- Arbitrum Sepolia
+- ETH Sepolia
+- OP Sepolia
+- AvalancheFuji
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+————————————
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Check this code demo at 
+https://wc.blockbolt.io/
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+————————————
 
-### `npm run eject`
+# We have integrated this flow on BlockBolt Checkout. Please review at https://store.blockbolt.io/mocha
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Powered by Wormhole & Circle.
