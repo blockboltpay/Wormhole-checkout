@@ -58,10 +58,16 @@ Demo video:
 - Base Sepolia To Arbitrum Sepolia, https://youtu.be/kOa58xvR5Os
 
 Tx ID Sample:
-https://wormholescan.io/#/tx/0xed7bacc7e61341a9f971558ff727bd7bfcb4742bf3072797de784949374c5d76?network=Testnet&view=overview
+[https://wormholescan.io/#/tx/0xed7bacc7e61341a9f971558ff727bd7bfcb4742bf3072797de784949374c5d76?network=Testnet&view=overview](https://wormholescan.io/#/tx/0xed7bacc7e61341a9f971558ff727bd7bfcb4742bf3072797de784949374c5d76?network=Testnet&view=overview)
 
 ————————————
 
 # We have integrated this flow on BlockBolt Checkout. Please review at https://store.blockbolt.io/mocha
+
+Demo Video:
+- Blockbolt Checkout with Wormhole : Arbitrum Sepolia to ETH Sepolia, https://youtu.be/vnwjrYQyKFI
+
+Tx ID Sample:
+[https://wormholescan.io/#/tx/0xf2656ed3e8b00759a12ec3aa93751317b736af73fc59a943a16c040a97b90881?network=Testnet&view=overview](https://wormholescan.io/#/tx/0xf2656ed3e8b00759a12ec3aa93751317b736af73fc59a943a16c040a97b90881?network=Testnet&view=overview)
 
 Powered by Wormhole & Circle.
