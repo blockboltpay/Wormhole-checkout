@@ -52,6 +52,9 @@ Routes directly set to WormholeTransfer component.
 Check this code demo at 
 https://wc.blockbolt.io/
 
+Demo video:
+https://youtu.be/aOfypdskGbY
+
 ————————————
 
 # We have integrated this flow on BlockBolt Checkout. Please review at https://store.blockbolt.io/mocha
